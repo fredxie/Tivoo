@@ -31,5 +31,4 @@ public class OutputFactory {
 		Output myOutput = myMap.get(typeName);
 		myOutput.outputFile();
 	}
-
 }

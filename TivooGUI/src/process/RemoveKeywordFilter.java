@@ -41,7 +41,7 @@ public class RemoveKeywordFilter implements Filter {
 			for (String k : myKeywords) {
 				// uses the hasKeyword method in the CalendarEvent class to see
 				// if the title contains the current keyword
-				if (currentEvent.hasKeyWord(k))
+				if (!currentEvent.hasKeyWord(k))
 					myEventsWith.add(currentEvent);
 
 			}

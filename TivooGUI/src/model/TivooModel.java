@@ -13,20 +13,19 @@ import org.jdom.JDOMException;
  * Function as Parser and keep ArrayList<CalendarEvent> data.
  */
 public class TivooModel {
-    
+
 	private ArrayList<CalendarEvent> myCalendar;
-	
-	public void setCalendar(ArrayList<CalendarEvent> cal){
+
+	public void setCalendar(ArrayList<CalendarEvent> cal) {
 		this.myCalendar = cal;
 	}
-	
-	public ArrayList<CalendarEvent> getCalendar(){
+
+	public ArrayList<CalendarEvent> getCalendar() {
 		return myCalendar;
 	}
-	
-	
+
 	public ArrayList<CalendarEvent> parse(ArrayList<File> files) {
-		ArrayList<CalendarEvent> list = new ArrayList<CalendarEvent>();	
+		ArrayList<CalendarEvent> list = new ArrayList<CalendarEvent>();
 		for (File inputXml : files) {
 			try {
 				ParserFactory factory = new ParserFactory();
@@ -34,7 +33,7 @@ public class TivooModel {
 				Element rootNode = factory.getMyRoot();
 
 				list = parser.parse(rootNode);
-			
+
 			} catch (JDOMException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -49,5 +48,5 @@ public class TivooModel {
 		}
 		return list;
 	}
-	
+
 }

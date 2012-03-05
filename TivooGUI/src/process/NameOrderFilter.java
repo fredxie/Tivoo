@@ -26,13 +26,13 @@ public class NameOrderFilter implements Filter {
 			ArrayList<CalendarEvent> events) {
 
 		// checks to make sure these parameters are in fact Strings
-		String version = null;
-		try {
-			version = (String) parameters.get(0);
-		} catch (ClassCastException cce) {
-			System.out.println("Instance" + parameters.get(0).toString()
-					+ " was not a String");
-		}
+//		String version = null;
+//		try {
+//			version = (String) parameters.get(0);
+//		} catch (ClassCastException cce) {
+//			System.out.println("Instance" + parameters.get(0).toString()
+//					+ " was not a String");
+//		}
 		// creates instance of the comparator
 		InOrderFilter myFilter = new InOrderFilter();
 		ArrayList<CalendarEvent> eventsToReturn = events;
@@ -41,9 +41,9 @@ public class NameOrderFilter implements Filter {
 		Collections.sort(eventsToReturn, myFilter);
 
 		// if the a reverse command is added, the list put in an inverse order
-		if (version.equals("reverse")) {
-			Collections.reverse(eventsToReturn);
-		}
+//		if (version.equals("reverse")) {
+//			Collections.reverse(eventsToReturn);
+//		}
 
 		return eventsToReturn;
 	}
