@@ -10,7 +10,9 @@ import javax.swing.JScrollPane;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
-
+/*
+ * Display class establish the display window and output the previewed html page.
+ */
 public class Display extends JFrame{
 	protected JEditorPane pane;
 	

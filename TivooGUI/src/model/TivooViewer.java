@@ -22,9 +22,14 @@ import output.Output;
 import output.OutputFactory;
 import process.Process;
 
+
+/*
+ * Establish the main choice button window and response to user's clicking. Call Dialogue class
+ * if input window is needed.
+ */
 public class TivooViewer extends JFrame implements ActionListener {
 	protected ArrayList<File> files = new ArrayList<File>();
-	protected Model myModel;
+	protected TivooModel myModel;
 	protected String myTitle;
 
 	protected JButton loadfile;
@@ -67,7 +72,7 @@ public class TivooViewer extends JFrame implements ActionListener {
 	protected static final JFileChooser ourChooser = new JFileChooser(
 			"./Resources");
 
-	public TivooViewer(String title, Model model)
+	public TivooViewer(String title, TivooModel model)
 			throws NoSuchAlgorithmException, IOException, ParseException {
 		this.setModel(model);
 		this.setTitle(title);
@@ -199,14 +204,14 @@ public class TivooViewer extends JFrame implements ActionListener {
 		view.addActionListener(this);
 	}
 	
-	private void setModel(Model model) {
+	private void setModel(TivooModel model) {
 		myModel = model;
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == reset) {
 			files.clear();
-			myModel = new Model();
+			myModel = new TivooModel();
 			System.out.print("reset done");
 		}
 		else if (e.getSource() == loadfile) {

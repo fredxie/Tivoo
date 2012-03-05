@@ -11,7 +11,9 @@ import javax.swing.JTextField;
 import org.joda.time.DateTime;
 import process.Process;
 
-
+/*
+ * Dialogue class set up dialogue window for filters that need input.
+ */
 
 public class Dialogue extends JFrame implements ActionListener{
 	
@@ -20,13 +22,13 @@ public class Dialogue extends JFrame implements ActionListener{
 	protected JButton done;
 	protected JTextField text1;
 	protected JTextField text2;
-	protected Model myModel;
+	protected TivooModel myModel;
 	protected String myType;
 
 	protected int[] startTime = new int[3];
 	protected int[] endTime = new int[3];
 	
-	public Dialogue(Model model,String type){ 
+	public Dialogue(TivooModel model,String type){ 
 	   this.setModel(model);
 	   this.setType(type);
 	   this.setTitle("Filter Window");
@@ -44,7 +46,7 @@ public class Dialogue extends JFrame implements ActionListener{
 		this.myType = myType;
 	}
 	
-	private void setModel(Model model) {
+	private void setModel(TivooModel model) {
 		this.myModel = model;
 	}
 
